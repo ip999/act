@@ -37,7 +37,7 @@ jobs:
       # - name: Run sourceguard-cli
       #   run: |
       #     ./sourceguard-cli -src ./
-
+  # dummy run for docker release - only build, won't push as no tag
   Build:
     needs: Test
     runs-on: ubuntu-latest
