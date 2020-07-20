@@ -1,8 +1,8 @@
 name: Python application - tests
 
 on:
-  push:
-    branches: [master]
+  # push:
+  #   branches: [master]
   pull_request:
     branches: [master]
 
@@ -39,6 +39,7 @@ jobs:
       #     ./sourceguard-cli -src ./
 
   Build:
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
