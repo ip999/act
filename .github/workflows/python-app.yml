@@ -1,6 +1,3 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
 name: Python application - tests
 
 on:
@@ -8,6 +5,10 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+
+env:
+  SG_CLIENT_ID: ${{ secrets.SG_CLIENT_ID }}
+  SG_SECRET_KEY: ${{ secrets.SG_SECRET_KEY }}
 
 jobs:
   Test:
@@ -27,3 +28,12 @@ jobs:
       - name: Test with pytest
         run: |
           pytest test.py
+      # Download SourceGuard
+      - name: Download SourceGuard
+        run: |
+          curl -o sourceguard-cli --location https://storage.googleapis.com/release-cli-prod/v0.0.98/linux/amd64/sourceguard-cli
+          chmod u+x ./sourceguard-cli
+      # Run sourceguard-cli
+      - name: Run sourceguard-cli
+        run: |
+          ./sourceguard-cli -src ./
