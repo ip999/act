@@ -2,9 +2,8 @@ name: Python application - Tag
 
 on:
   push:
-    branches: [master]
-      tags:
-        - 'v*' # push on tags matching v*
+    tags:
+      - 'v*' # push on tags matching v*
 
 env:
   SG_CLIENT_ID: ${{ secrets.SG_CLIENT_ID }}
