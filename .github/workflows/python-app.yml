@@ -10,7 +10,13 @@ jobs:
     steps:
       - name: Start Container
         run: |
-          docker run -d -p 5000:5000 cndino/cicd-demo:latest
+          docker run --name app -d -p 5000:5000 cndino/cicd-demo:latest
+      - name: Check Running Containers
+        run: |
+          docker ps
+      - name: Check Container Logs
+        run: |
+          docker logs app
       - name: Run Curl
         run: |
           curl localhost:5000
