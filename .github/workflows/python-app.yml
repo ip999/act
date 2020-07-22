@@ -26,8 +26,7 @@ jobs:
           curl localhost:5000
       - name: Run curl in a more elegant way (removes need for sleep?)
         run: |
-                - name: Test
-        run: docker run appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
+          docker run appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
       - name: install puppeteer-headful
         uses: mujo-code/puppeteer-headful@master
         env:
