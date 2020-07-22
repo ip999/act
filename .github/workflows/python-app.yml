@@ -37,5 +37,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Download-desktop-screenshots
-          path: ./screenshots/output.jpeg
+          path: ./screenshots/
       - run: rm ./screenshots/*
