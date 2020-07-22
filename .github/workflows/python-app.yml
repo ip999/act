@@ -60,6 +60,6 @@ jobs:
       - name: Start Container
         run: |
         docker run -p 5000:5000 cndino/cicd-demo:latest
-      - name: Start Container
+      - name: run curl
         run: |
         curl localhost:5000
