@@ -32,12 +32,8 @@ jobs:
         uses: flameddd/screenshots-ci-action@v1.1.0
         with:
           url: http://localhost:5000
-          devices: iPhone 6
-          noDesktop: true
       - name: List Files
         run: ls -la ./screenshots/
-      - name: Rename File
-        run: mv ./screenshots/*.jpeg ./screenshots/output.jpeg
       - uses: actions/upload-artifact@v2
         with:
           name: Download-desktop-screenshots
