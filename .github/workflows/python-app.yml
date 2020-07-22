@@ -36,8 +36,10 @@ jobs:
           noDesktop: true
       - name: List Files
         run: ls -la ./screenshots/
+      - name: Rename File
+        run: mv ./screenshots/*.jpeg ./screenshots/output.jpeg
       - uses: actions/upload-artifact@v2
         with:
           name: Download-desktop-screenshots
-          path: screenshots
+          path: ./screenshots/output.jpeg
       - run: rm ./screenshots/*
