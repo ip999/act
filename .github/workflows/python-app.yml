@@ -42,3 +42,8 @@ jobs:
           name: Download-desktop-screenshots
           path: ./screenshots/
       - run: rm ./screenshots/*
+      - name: Test stuff here
+        run: |
+          GITHUB_WORKFLOW_URL=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+          echo GITHUB_WORKFLOW_URL
+          
